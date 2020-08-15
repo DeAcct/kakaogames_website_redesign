@@ -48,10 +48,12 @@
 }
 
 /*reset*/
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+html,body,div,p,ul,ol,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,
+table,tr,th,td,
+form,fieldset,legend,input,label,textarea,select,button,
+header,footer,main,aside,nav,section,article,
+a,span,strong,em,b,i,address {
+    margin:0; padding:0; box-sizing:border-box;
 }
 
 html {
@@ -111,35 +113,43 @@ header {
 	position: fixed;
 	top: 0;
 	left: 0;
-
-	-ms-user-select: none;
-	-moz-user-select: -moz-none;
-	-khtml-user-select: none;
-	-webkit-user-select: none;
 	user-select: none;
 }
 header > div.on{
-	background-color: rgba(255, 255, 255, 0.8);
-	-webkit-backdrop-filter: blur(10px);
-	backdrop-filter: blur(10px);
-	/* border-bottom: 1px solid #aaa; */
-    animation:fade 0.5s ease-out;
+    animation:fade 0.5s ease-out forwards;
 }
-header.scroll {
-	background-color: rgba(255, 255, 255, 0.8);
+
+header > div.on.scroll{
+    animation: none;
+}
+header > div.scroll {
+	background-color: rgba(255, 255, 255, 0.95);
+    -ms-backdrop-filter: blur(10px);
+    -o-backdrop-filter: blur(10px);
+    -moz-backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
 	backdrop-filter: blur(10px);
 }
 @keyframes fade {
 	0% {
-		opacity: 0;
+	    background-color: rgba(255, 255, 255, 0);
+        -ms-backdrop-filter: blur(10px);
+        -o-backdrop-filter: blur(10px);
+        -moz-backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
 	}
 	100% {
-		opacity: 1;
+        background-color: rgba(255, 255, 255, 0.95);
+        -ms-backdrop-filter: blur(10px);
+        -o-backdrop-filter: blur(10px);
+        -moz-backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
 	}
 }
 .header_wrap {
-	width: 1276px;
+	width: 1080px;
 	margin: 0 auto;
 	display: flex;
 }
@@ -176,7 +186,6 @@ header h1 img {
 .gnb li a:hover {
 	font-weight: 500;
 }
-
 .header_wrap .lang {
 	width: 25%;
 	height: 70px;
@@ -185,7 +194,7 @@ header h1 img {
 	float: right;
 	display: inline-block;
 	height: 70px;
-	width: 150px;
+	width: 100px;
 	margin-left: 50%;
 	line-height: 69px;
 	font-size: 1.6rem;
@@ -211,17 +220,20 @@ nav {
 	display: none;
 }
 nav.open {
-	display: block;
-	position: relative;
+	display:block;
 	padding: 20px;
+    top:0;
 	left: 0;
 	width: 100%;
 	height: 300px;
     
-	background-color: rgba(255, 255, 255, 0.8);
-	-webkit-backdrop-filter: blur(10px);
+	background-color: rgba(255, 255, 255, 0.7);
+    -ms-backdrop-filter: blur(10px);
+    -o-backdrop-filter: blur(10px);
+    -moz-backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 	backdrop-filter: blur(10px);
-	animation: dropdown 0.5s ease-in-out;
+	animation: dropdown 0.5s ease-in-out forwards;
 }
 @keyframes dropdown {
 	0% {
@@ -233,25 +245,32 @@ nav.open {
 		opacity: 1;
 	}
 }
-.nav_inner {
+
+.nav_inner{
+    margin: 0 auto;
+    width: 1080px;
+    position:relative;
+}
+.nav_inner > div{
 	margin: 0 auto;
-	width: 638px;
+	width: 100%;
 	height: 100%;
+    display:flex;
+    justify-content: center;
 }
 .nav_inner ul {
-	float: left;
-	width: 25%;
+	width: 12.5%;
 	height: 100%;
 }
 .nav_inner li {
 	width: 100%;
-	height: 30px;
+	height: 35px;
 }
 .nav_inner a {
 	display: block;
 	width: 100%;
 	height: 100%;
-	line-height: 30px;
+	line-height: 35px;
 	font-size: 1.4rem;
 	text-align: center;
 	font-weight: 400;
@@ -259,21 +278,22 @@ nav.open {
 .nav_inner a:hover {
 	font-weight: 500;
 }
-nav.open > ul {
+nav.open .nav_inner > ul {
 	display: block;
-	position: absolute;
-	top: 0;
-	right: 100px;
+    position:absolute;
+    top: 0;
+    right:0;
 	width: 100px;
-	height: 120px;
-	background-color: #eee;
+	height: 105px;
+	background-color: #2a2b38;
 	border-radius: 5px;
 }
-nav.open > ul li a {
+nav.open .nav_inner > ul li a {
 	display: block;
 	width: 100%;
-	height: 40px;
-	line-height: 40px;
+	height: 35px;
+    color:#fff;
+	line-height: 35px;
 	text-align: center;
 	font-size: 1.3rem;
 }
@@ -306,9 +326,9 @@ nav.open > ul li a {
 	top: 50%;
 }
 .slider_wrap {
-	width: 1276px;
+	width: 1080px;
 	margin: 0 auto;
-	padding: 175px 0 0 175px;
+	padding-top: 175px;
 }
 .slider_wrap h2 {
 	display: block;
@@ -338,9 +358,262 @@ nav.open > ul li a {
 	font-weight: 400;
 	font-size: 1.6rem;
 }
+
+
 #visual {
 	width: 100%;
-	height: 600px;
+	height: 510px;
+}
+.visual_wrap{
+    width: 1080px;
+    height: 100%;
+    margin: 0 auto;
+}
+.visual_wrap h2{
+    font-size: 3.5rem;
+    text-align: center;
+    padding-top: 40px;
+    font-weight: 500;
+}
+.visual_wrap .card_view{
+    margin-top: 20px;
+    width: 100%;
+    height: 350px;
+    background:#fff;
+}
+.visual_wrap .stock{
+    float:left;
+    width: 33.333%;
+    height: 100%;
+    background: url(../img/kkg-visual-stock.jpg) no-repeat center/cover, #2a2b38;
+    background-blend-mode: overlay;
+}
+.visual_wrap .stock a{
+    color:#fff;
+    display:block;
+    width: 100%;
+    height: 100%;
+    padding: 20px 30px;
+    margin-bottom: 5px;
+}
+.visual_wrap .stock h3{
+    font-size: 3rem;
+    font-weight: 500;
+}
+.visual_wrap .stock p{
+    font-size: 2rem;
+    padding-bottom: 160px;
+}
+.visual_wrap .stock div{
+    float:right;
+    text-align: right;
+}
+.visual_wrap .stock strong{
+    font-size: 1.5rem;
+    font-weight: 300;
+    border: 1px solid #fff;
+    border-radius: 15px;
+    display: inline-block;
+    text-align: center;
+    width: 135px;
+    height:30px;
+    line-height: 28px;
+}
+.visual_wrap .stock strong::after{
+    content:"";
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-left: 5px;
+    background: url(../img/kkg-stock-up.png) no-repeat center;
+    background-size: contain;
+    animation: upDown 0.5s infinite;
+}
+@keyframes upDown{
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(2px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+
+.visual_wrap .stock b{
+    display: block;     
+    text-align: right;
+    font-size: 4rem;
+    font-weight: 800;
+}
+.visual_wrap .news{
+    float:right;
+    width: 66.666%;
+    height: 100%;
+    background-color: #eee;
+}
+.visual_wrap .news .up,
+.visual_wrap .news .down{
+    width: 100%;
+    height: 50%;
+}
+.visual_wrap .news a{
+    float:left;
+    position: relative;
+    display:block;
+    width: 25%;
+    height: 100%;
+    overflow: hidden;
+}
+.visual_wrap .news span{
+    display:block;
+    width: 100%;
+    height: 100%;
+    background: url(../img/kkg-visual-gbp.jpg) no-repeat center/cover;
+}
+.visual_wrap .news .up a:nth-child(2) span{
+    background-image: url(../img/kkg-visual-friPop.jpg);
+}
+.visual_wrap .news .up a:nth-child(3) span{
+    background-image: url(../img/kkg-visual-elyon.jpg);
+}
+.visual_wrap .news .up a:last-child span{
+    background-image: -ms-linear-gradient(135deg, #ffcd00, #2a2b38);
+    background-image: -o-linear-gradient(135deg, #ffcd00, #2a2b38);
+    background-image: -moz-linear-gradient(135deg, #ffcd00, #2a2b38);
+    background-image: -webkit-linear-gradient(135deg, #ffcd00, #2a2b38);
+    background-image: linear-gradient(135deg, #ffcd00, #2a2b38);
+}
+.visual_wrap .news .down a:first-child span{
+    background-image: url(../img/kkg-visual-pcrSum.jpg);
+}
+.visual_wrap .news .down a:nth-child(2) span{
+    background-image: url(../img/kkg-visual-gt1StUp.jpg);
+}
+.visual_wrap .news .down a:nth-child(3) span{
+    background-image: url(../img/kkg-visual-tera.jpg);
+}
+.visual_wrap .news .down a:last-child span{
+    background-image: url(../img/kkg-visual-gtOpen.jpg);
+}
+.visual_wrap .news a:hover span{
+    animation: zoom 0.25s ease-out forwards;
+}
+.visual_wrap .news a:hover::after{
+    content:"제목";
+    color:#fff;
+    font-weight: 500;
+    font-size: 1.7rem;
+    display: block;
+    position: absolute;
+    top:0;
+    left:0;
+    padding: 20px 0 0 20px;
+    width: 100%;
+    height: 100%;
+    animation: blurBlack 0.5s ease-out forwards;
+    white-space: pre;
+}
+.visual_wrap .news a:hover::before{
+    z-index: 25;
+    content: "날짜";
+    color:#fff;
+    font-size: 1.5rem;
+    position: absolute;
+    bottom: 0;
+    right:0;
+    padding: 0 20px 20px 0;
+    width: auto;
+    height: auto;
+    animation: transp 0.5s ease-out forwards;
+    white-space: pre;
+}
+.visual_wrap .news .up a:first-child:hover::after{
+    content: '뱅드림 X \A 하츠네미쿠 콜라보';
+}
+.visual_wrap .news .up a:nth-child(2):hover::after{
+    content: '프렌즈팝 \A 5주년 이벤트 진행';
+}
+.visual_wrap .news .up a:nth-child(3):hover::after{
+    content: '엘리온 \A 사전체험 종료';
+}
+.visual_wrap .news .up a:last-child:hover::after{
+    content: '카카오게임즈 \A 9월내 코스닥 상장';
+}
+.visual_wrap .news .down a:first-child:hover::after{
+    content: '프리코네 \A 여름 한정 캐릭터 \A 업데이트';
+}
+.visual_wrap .news .down a:nth-child(2):hover::after{
+    content: '가디언테일즈 \A 출시 후 첫 업데이트';
+}
+.visual_wrap .news .down a:nth-child(3):hover::after{
+    content: '테라 클래식 \A 전설 등급 \A 신규 펫 공개';
+}
+.visual_wrap .news .down a:last-child:hover::after{
+    content: '가디언테일즈 \A 글로벌 그랜드 오픈';
+}
+
+.visual_wrap .news .up a:first-child:hover::before{
+    content: '2020.08.11';
+}
+.visual_wrap .news .up a:nth-child(2):hover::before{
+    content: '2020.08.04';
+}
+.visual_wrap .news .up a:nth-child(3):hover::before{
+    content: '2020.07.29';
+}
+.visual_wrap .news .up a:last-child:hover::before{
+    content: '2020.08.03';
+}
+.visual_wrap .news .down a:first-child:hover::before{
+    content: '2020.07.30';
+}
+.visual_wrap .news .down a:nth-child(2):hover::before{
+    content: '2020.07.30';
+}
+.visual_wrap .news .down a:nth-child(3):hover::before{
+    content: '2020.07.30';
+}
+.visual_wrap .news .down a:last-child:hover::before{
+    content: '2020.07.29';
+}
+@keyframes zoom{
+    0%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(1.15);
+    }
+}
+@keyframes transp{
+    0%{
+        color:transparent;
+    }
+    50%{
+        color:transparent;
+    }
+    100%{
+        color:#fff;
+    }
+}
+@keyframes blurBlack{
+    0%{
+        color:transparent;
+        background-color:rgba(0,0,0,0);
+    }
+    50%{
+        color:transparent;
+        background-color:rgba(0,0,0,0);
+        -webkit-backdrop-filter: blur(0px);
+        backdrop-filter: blur(0px);
+    }
+    100%{
+        color:#fff;
+        background-color:rgba(0,0,0,0.5);
+        -webkit-backdrop-filter: blur(5px);
+        backdrop-filter: blur(5px);
+    }
 }
 
 @media all and (max-width: 1276px) {
@@ -348,4 +621,13 @@ nav.open > ul li a {
 	.header_wrap {
 		width: 90%;
 	}
+}
+@media all and (max-width: 1080px){
+    
+}
+@media all and (max-width: 768px){
+    
+}
+@media all and (max-width: 500px){
+    
 }
