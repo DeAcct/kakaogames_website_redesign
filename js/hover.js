@@ -1,7 +1,7 @@
 $(document).ready(function() {
     $('header').hover(function() {
         $('nav').toggleClass('open');
-        $('header').toggleClass('on');
+        $('header > div').toggleClass('on');
     });
 });
 
