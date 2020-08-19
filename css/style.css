@@ -298,11 +298,11 @@ nav.open .nav_inner > ul li a {
 	font-size: 1.3rem;
 }
 
-#slider {
+#slider { 
 	position: relative;
 	width: 100%;
 	height: 650px;
-	background: url(../img/kkg-slider-banner.jpg) no-repeat center/cover;
+	background: url(../img/kkg-slider-banner1.jpg) no-repeat center/cover;
 }
 #slider button {
 	margin-top: 19px;
@@ -351,12 +351,13 @@ nav.open .nav_inner > ul li a {
 	margin-top: 30px;
 	display: block;
 	width: 130px;
-	height: 45px;
+	height: 44px;
 	text-align: center;
-	line-height: 43px;
+	line-height: 42px;
 	border: 1px solid #000;
 	font-weight: 400;
 	font-size: 1.6rem;
+    border-radius: 22px; 
 }
 
 
@@ -370,39 +371,43 @@ nav.open .nav_inner > ul li a {
     margin: 0 auto;
 }
 .visual_wrap h2{
-    font-size: 3.5rem;
     text-align: center;
-    padding-top: 40px;
+    padding-top: 32px;
+    font-size: 4rem;
     font-weight: 500;
 }
 .visual_wrap .card_view{
-    margin-top: 20px;
+    display:flex;
+    margin-top: 24px;
     width: 100%;
-    height: 350px;
-    background:#fff;
+    height: 80%;
 }
 .visual_wrap .stock{
-    float:left;
-    width: 33.333%;
+    width: 30%;
     height: 100%;
-    background: url(../img/kkg-visual-stock.jpg) no-repeat center/cover, #2a2b38;
-    background-blend-mode: overlay;
+    margin-right:50px;
 }
 .visual_wrap .stock a{
-    color:#fff;
     display:block;
     width: 100%;
     height: 100%;
-    padding: 20px 30px;
-    margin-bottom: 5px;
+    padding: 20px 35px;
+    background: url(../img/kkg-visual-stock.jpg) no-repeat center/cover, #2a2b38;
+    background-blend-mode: overlay;
+    border-radius: 22px;
+    color:#fff;
+}
+.visual_wrap .stock a:hover{
+    box-shadow: 6px 6px 12px rgba(42, 43, 56, 0.3);
+    transition: 0.5s ease-out;
 }
 .visual_wrap .stock h3{
     font-size: 3rem;
-    font-weight: 500;
+    font-weight: 400;
 }
 .visual_wrap .stock p{
-    font-size: 2rem;
-    padding-bottom: 160px;
+    font-size: 1.7rem;
+    margin-bottom: 210px;
 }
 .visual_wrap .stock div{
     float:right;
@@ -416,7 +421,7 @@ nav.open .nav_inner > ul li a {
     display: inline-block;
     text-align: center;
     width: 135px;
-    height:30px;
+    height: 30px;
     line-height: 28px;
 }
 .visual_wrap .stock strong::after{
@@ -440,181 +445,62 @@ nav.open .nav_inner > ul li a {
         transform: translateY(0);
     }
 }
-
 .visual_wrap .stock b{
     display: block;     
     text-align: right;
-    font-size: 4rem;
-    font-weight: 800;
+    font-size: 5rem;
+    font-weight: 700;
 }
 .visual_wrap .news{
-    float:right;
-    width: 66.666%;
+    position:relative;
+    width: 706px; /*이제 156*/
     height: 100%;
-    background-color: #eee;
-}
-.visual_wrap .news .up,
-.visual_wrap .news .down{
-    width: 100%;
-    height: 50%;
 }
 .visual_wrap .news a{
-    float:left;
-    position: relative;
-    display:block;
-    width: 25%;
-    height: 100%;
-    overflow: hidden;
-}
-.visual_wrap .news span{
-    display:block;
+    display: block;
     width: 100%;
-    height: 100%;
-    background: url(../img/kkg-visual-gbp.jpg) no-repeat center/cover;
+    height: 30.333%;
+    margin-bottom: 3%;
+    background-color: #fff;
+    border-radius: 22px;
+    overflow: hidden;
+    vertical-align: middle;
 }
-.visual_wrap .news .up a:nth-child(2) span{
-    background-image: url(../img/kkg-visual-friPop.jpg);
+.visual_wrap .news a:last-child{
+    margin:0;
 }
-.visual_wrap .news .up a:nth-child(3) span{
-    background-image: url(../img/kkg-visual-elyon.jpg);
+.visual_wrap .news a:hover{
+    transition: 0.5s ease-out;
+    box-shadow: 6px 6px 12px rgba(42, 43, 56, 0.1);
 }
-.visual_wrap .news .up a:last-child span{
-    background-image: -ms-linear-gradient(135deg, #ffcd00, #2a2b38);
-    background-image: -o-linear-gradient(135deg, #ffcd00, #2a2b38);
-    background-image: -moz-linear-gradient(135deg, #ffcd00, #2a2b38);
-    background-image: -webkit-linear-gradient(135deg, #ffcd00, #2a2b38);
-    background-image: linear-gradient(135deg, #ffcd00, #2a2b38);
+.visual_wrap .news .thumb{
+    float:left;
+    width: 200px;
+    height: 123px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 22px;
 }
-.visual_wrap .news .down a:first-child span{
+.visual_wrap .news a:first-child .thumb{
+    background-image: url(../img/kkg-visual-stkListed.jpg);
+}
+.visual_wrap .news a:nth-child(2) .thumb{
     background-image: url(../img/kkg-visual-pcrSum.jpg);
 }
-.visual_wrap .news .down a:nth-child(2) span{
-    background-image: url(../img/kkg-visual-gt1StUp.jpg);
-}
-.visual_wrap .news .down a:nth-child(3) span{
-    background-image: url(../img/kkg-visual-tera.jpg);
-}
-.visual_wrap .news .down a:last-child span{
-    background-image: url(../img/kkg-visual-gtOpen.jpg);
-}
-.visual_wrap .news a:hover span{
-    animation: zoom 0.25s ease-out forwards;
-}
-.visual_wrap .news a:hover::after{
-    content:"제목";
-    color:#fff;
-    font-weight: 500;
-    font-size: 1.7rem;
-    display: block;
-    position: absolute;
-    top:0;
-    left:0;
-    padding: 20px 0 0 20px;
-    width: 100%;
-    height: 100%;
-    animation: blurBlack 0.5s ease-out forwards;
-    white-space: pre;
-}
-.visual_wrap .news a:hover::before{
-    z-index: 25;
-    content: "날짜";
-    color:#fff;
-    font-size: 1.5rem;
-    position: absolute;
-    bottom: 0;
-    right:0;
-    padding: 0 20px 20px 0;
-    width: auto;
-    height: auto;
-    animation: transp 0.5s ease-out forwards;
-    white-space: pre;
-}
-.visual_wrap .news .up a:first-child:hover::after{
-    content: '뱅드림 X \A 하츠네미쿠 콜라보';
-}
-.visual_wrap .news .up a:nth-child(2):hover::after{
-    content: '프렌즈팝 \A 5주년 이벤트 진행';
-}
-.visual_wrap .news .up a:nth-child(3):hover::after{
-    content: '엘리온 \A 사전체험 종료';
-}
-.visual_wrap .news .up a:last-child:hover::after{
-    content: '카카오게임즈 \A 9월내 코스닥 상장';
-}
-.visual_wrap .news .down a:first-child:hover::after{
-    content: '프리코네 \A 여름 한정 캐릭터 \A 업데이트';
-}
-.visual_wrap .news .down a:nth-child(2):hover::after{
-    content: '가디언테일즈 \A 출시 후 첫 업데이트';
-}
-.visual_wrap .news .down a:nth-child(3):hover::after{
-    content: '테라 클래식 \A 전설 등급 \A 신규 펫 공개';
-}
-.visual_wrap .news .down a:last-child:hover::after{
-    content: '가디언테일즈 \A 글로벌 그랜드 오픈';
+.visual_wrap .news a:last-child .thumb{
+    background-image:url(../img/kkg-visual-gtOpen.jpg);
 }
 
-.visual_wrap .news .up a:first-child:hover::before{
-    content: '2020.08.11';
+
+footer{
+    margin-top: 50px;
+    width: 100%;
+    height: 200px;
+    background-color: #2a2b38;
 }
-.visual_wrap .news .up a:nth-child(2):hover::before{
-    content: '2020.08.04';
-}
-.visual_wrap .news .up a:nth-child(3):hover::before{
-    content: '2020.07.29';
-}
-.visual_wrap .news .up a:last-child:hover::before{
-    content: '2020.08.03';
-}
-.visual_wrap .news .down a:first-child:hover::before{
-    content: '2020.07.30';
-}
-.visual_wrap .news .down a:nth-child(2):hover::before{
-    content: '2020.07.30';
-}
-.visual_wrap .news .down a:nth-child(3):hover::before{
-    content: '2020.07.30';
-}
-.visual_wrap .news .down a:last-child:hover::before{
-    content: '2020.07.29';
-}
-@keyframes zoom{
-    0%{
-        transform: scale(1);
-    }
-    100%{
-        transform: scale(1.15);
-    }
-}
-@keyframes transp{
-    0%{
-        color:transparent;
-    }
-    50%{
-        color:transparent;
-    }
-    100%{
-        color:#fff;
-    }
-}
-@keyframes blurBlack{
-    0%{
-        color:transparent;
-        background-color:rgba(0,0,0,0);
-    }
-    50%{
-        color:transparent;
-        background-color:rgba(0,0,0,0);
-        -webkit-backdrop-filter: blur(0px);
-        backdrop-filter: blur(0px);
-    }
-    100%{
-        color:#fff;
-        background-color:rgba(0,0,0,0.5);
-        -webkit-backdrop-filter: blur(5px);
-        backdrop-filter: blur(5px);
-    }
-}
+
+
 
 @media all and (max-width: 1276px) {
 	/*small PC*/
