@@ -1,4 +1,4 @@
-# hyeon.github.io
+# kakaogames_website_redesign
 
 code for<br>
 <a href="https://deacct.github.io/kakaogames_website_redesign">https://deacct.github.io/kakaogames_website_redesign<a>
