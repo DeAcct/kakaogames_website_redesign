@@ -544,6 +544,8 @@ nav.open .nav_inner > ul li a {
                 -6px -6px 12px rgba(255,255,255,1);
     background-image:linear-gradient(45deg, #e8e8e8,50%, #fff);
 }
+
+
 .visual_wrap .news .thumb{
     float:left;
     display:block;
@@ -556,6 +558,7 @@ nav.open .nav_inner > ul li a {
     margin: 10px 20px 10px 13px;
     box-shadow: 3px 3px 6px rgba(42, 43, 56, 0.3),
                 -6px -6px 12px rgba(255,255,255,1);
+    transition: 0.5s ease-out;
 }
 .visual_wrap .news a:first-child .thumb{
     background-image: url(../img/kkg-visual-stkListed.jpg);
@@ -565,6 +568,10 @@ nav.open .nav_inner > ul li a {
 }
 .visual_wrap .news a:nth-child(3) .thumb{
     background-image:url(../img/kkg-visual-gtOpen.jpg);
+}
+
+.visual_wrap .news a:hover .thumb{
+    box-shadow:none;
 }
 .visual_wrap .news h3{
     font-size: 2.3rem;
