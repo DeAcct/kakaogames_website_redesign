@@ -61,11 +61,13 @@ $(document).ready(function () {
     if (n == 4) {
       n = 0;
     }
-    $(".mockup_wrap").animate(
-      {
-        left: -520 * n,
-      },
-      1000
-    );
+    $(".mockup_wrap")
+      .delay(2000)
+      .animate(
+        {
+          left: -520 * n,
+        },
+        1000
+      );
   }, 3000);
 });
