@@ -129,6 +129,7 @@ a {
 * {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
+  word-break: keep-all;
 }
 *::-webkit-scrollbar {
   display: none; /* Chrome, Safari, Opera*/
@@ -168,11 +169,6 @@ address {
 .blind {
   position: absolute;
   left: -9999px;
-}
-.clear::after {
-  clear: both;
-  content: "";
-  display: block;
 }
 .pc {
   display: block;
@@ -306,6 +302,7 @@ nav .gnb {
 #visual {
   width: 100%;
   background-color: #f0f0f0;
+  padding: 150px 0 80px;
 }
 .visual_wrap {
   width: 1080px;
@@ -315,7 +312,6 @@ nav .gnb {
   text-align: center;
   font-size: 4rem;
   font-weight: 500;
-  padding-top: 150px;
 }
 .visual_wrap .card_view {
   display: flex;
@@ -324,7 +320,7 @@ nav .gnb {
 }
 .visual_wrap .stock {
   width: 30%;
-  height: 100%;
+  height: 500px;
   margin-right: 50px;
 }
 .visual_wrap .stock a {
@@ -398,39 +394,40 @@ nav .gnb {
 }
 .visual_wrap .news {
   width: 706px;
-  height: 100%;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .visual_wrap .news a {
-  display: block;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
-  height: 30.333%;
-  margin-bottom: 3%;
-  padding-right: 30px;
+  height: 30%;
+  padding: 0 30px;
   border-radius: 22px;
-  overflow: hidden;
-  vertical-align: middle;
   background-color: #fff;
-}
-.visual_wrap .news a:last-child {
-  margin: 0;
 }
 .visual_wrap .news a:hover {
   transition: 0.5s ease-out;
   box-shadow: 6px 6px 12px rgba(42, 43, 56, 0.1),
-    -6px -6px 12px rgba(255, 255, 255, 1);
-  background-image: linear-gradient(45deg, #e8e8e8, 50%, #fff);
+              -6px -6px 12px rgba(255, 255, 255, 1);
+  background-image: linear-gradient(
+      45deg, 
+      #e8e8e8, 
+      50%, 
+      #fff
+    );
 }
 
 .visual_wrap .news .thumb {
-  float: left;
-  display: block;
-  width: 150px;
-  height: 100px;
+  width: 160px;
+  height: 110px;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   border-radius: 11px;
-  margin: 10px 20px 10px 13px;
   box-shadow: 3px 3px 6px rgba(42, 43, 56, 0.3),
     -6px -6px 12px rgba(255, 255, 255, 1);
   transition: 0.5s ease-out;
@@ -448,20 +445,24 @@ nav .gnb {
 .visual_wrap .news a:hover .thumb {
   box-shadow: none;
 }
+.visual_wrap .summery{
+  flex: 2;
+  margin-left: 20px;
+}
 .visual_wrap .news h3 {
   font-size: 2.3rem;
   font-weight: 500;
-  margin: 20px 0 5px;
 }
 .visual_wrap .news p {
   font-size: 1.3rem;
   font-weight: 300;
   line-height: 1.5;
+  margin-top: 10px;
 }
 .visual_wrap > a {
   width: 150px;
   height: 44px;
-  margin: 30px auto 0;
+  margin: 60px auto 0;
 }
 .visual_wrap .btn::after {
   content: "";
@@ -477,17 +478,18 @@ nav .gnb {
 #introd {
   width: 100%;
   background-color: #f0f0f0;
+  padding-bottom: 150px;
 }
 #introd h2 {
   text-align: center;
   font-size: 4rem;
   font-weight: 500;
-  padding-top: 40px;
 }
 .introd_wrap {
   border-top: 1px solid #2a2b38;
   width: 1080px;
   margin: 0 auto;
+  padding-top: 80px;
 }
 .introd_wrap > span {
   display: block;
@@ -510,12 +512,12 @@ nav .gnb {
   font-weight: 400;
   font-size: 2.5rem;
   text-align: center;
-  padding: 30px 0 20px;
+  padding-top: 30px;
 }
 .frame {
   border-radius: 22px;
-  margin: 0 auto;
-  padding: 5px;
+  margin: 20px auto 0;
+  padding-top: 5px;
   width: 530px;
   height: 260px;
   box-shadow: 6px 6px 12px rgba(42, 43, 56, 0.5), -6px -6px 12px #fff;
@@ -683,16 +685,15 @@ footer {
   .banner_wrap li {
     height: 500px;
   }
-  #visual {
-    height: 820px;
+  #visual{
+    padding: 90px 0 40px;
   }
   #visual .visual_wrap > h2 {
     font-size: 3.5rem;
   }
   .visual_wrap {
-    width: 100%;
+    width: 87.5%;
     height: auto;
-    padding: 0 50px;
   }
   .visual_wrap .card_view {
     display: block;
@@ -702,7 +703,7 @@ footer {
   }
   .visual_wrap .stock {
     width: 100%;
-    height: 150px;
+    height: 300px;
     margin: 0;
   }
   .visual_wrap .stock a {
@@ -727,27 +728,10 @@ footer {
   }
   .visual_wrap .news {
     width: 100%;
-    height: auto;
     margin-top: 30px;
-  }
-  .visual_wrap .news a {
-    display: block;
-    width: 100%;
-    height: 120px;
-    margin: 20px 0;
-    padding-right: 30px;
-    border-radius: 22px;
-    overflow: hidden;
-    vertical-align: middle;
   }
   .visual_wrap .news a:last-child {
     margin: 0;
-  }
-  .visual_wrap .news a:hover {
-    transition: 0.5s ease-out;
-    box-shadow: 6px 6px 12px rgba(42, 43, 56, 0.1),
-      -6px -6px 12px rgba(255, 255, 255, 1);
-    background-image: linear-gradient(45deg, #e8e8e8, 50%, #fff);
   }
   .visual_wrap > a {
     width: 150px;
@@ -756,7 +740,8 @@ footer {
   }
   .introd_wrap {
     width: 100%;
-    padding: 0 50px;
+    padding-top: 50px;
+    border:none;
   }
   #introd .introd_wrap > h2 {
     font-size: 3.5rem;
@@ -875,25 +860,22 @@ footer {
     text-align: center;
   }
   .visual_wrap .news {
-    height: 360px;
+    width: 100vw;
+    height: 100vw;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
   }
   .visual_wrap .news > a {
     position: relative;
     margin: 0;
     overflow: auto;
-    width: 50%;
-    height: 50%;
+    width: 100%;
+    height: 100%;
     padding: 0;
     float: left;
     border-radius: 0;
     background: url(../img/kkg-visual-stkListed.jpg) no-repeat center/cover;
-  }
-  .visual_wrap .news > a:after {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
   }
   .visual_wrap .news > a:nth-child(2) {
     background-image: url(../img/kkg-visual-pcrSum.jpg);
@@ -907,16 +889,6 @@ footer {
   #visual .thumb {
     display: none;
   }
-  .visual_wrap .news > a:hover {
-    box-shadow: none;
-    background-image: url(../img/kkg-visual-stkListed.jpg);
-  }
-  .visual_wrap .news > a:nth-child(2):hover {
-    background-image: url(../img/kkg-visual-pcrSum.jpg);
-  }
-  .visual_wrap .news > a:nth-child(3):hover {
-    background-image: url(../img/kkg-visual-gtOpen.jpg);
-  }
   .visual_wrap .news span a {
     background: transparent;
     width: 100%;
@@ -929,20 +901,28 @@ footer {
     box-shadow: none;
   }
   .visual_wrap .news h3 {
-    position: absolute;
     margin: 0;
-    padding: 20px 30px;
     font-size: 2rem;
     color: #fff;
   }
   .visual_wrap .news .more {
     display: block;
-    width: 50%;
-    height: 50%;
+    width: 100%;
+    height: 100%;
     background: url(../img/kkg-arrow-slider-more-w.png) no-repeat center,
       #2a2b38;
     background-size: 60px;
     float: left;
+  }
+  .visual_wrap .summery {
+    flex:auto;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0 20px;
+    background-color:rgba(0,0,0,0.3);
+    justify-content: center;
+    align-items: center;
   }
   #introd {
     height: auto;
