@@ -43,6 +43,8 @@ $(document).ready(function () {
   });
 
   var $slider_wrap = $(".slider_wrap");
+  /*
+  슬라이더 전면 재설계 필요
   $(".next").click(function () {
     $slider_wrap.animate(
       {
@@ -123,6 +125,7 @@ $(document).ready(function () {
       }
     );
   });
+  */
 
   var n = 0;
   setInterval(function () {
